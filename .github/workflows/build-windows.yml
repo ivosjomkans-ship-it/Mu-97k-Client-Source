@@ -55,13 +55,13 @@ jobs:
               Copy-Item $_.FullName $dst
             }
 
-            - uses: actions/upload-artifact@v4
+             - uses: actions/upload-artifact@v4
         with:
           name: mu97k-cmake-${{ matrix.config }}
           path: |
             bin/Client/main.exe
             bin/Client/main.map
-            bin/Client/Data/**
+            bin/Client/Data/
             bin/Client/config.ini
           if-no-files-found: error
 
@@ -110,7 +110,7 @@ jobs:
           path: |
             bin/Client/main.exe
             bin/Client/main.map
-            bin/Client/Data/**
+            bin/Client/Data/
             bin/Client/config.ini
           if-no-files-found: warn
 
